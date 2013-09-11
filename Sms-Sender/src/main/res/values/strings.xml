@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SMS-Sender</string>
+    <string name="app_author">Martin Wührer</string>
+    <string name="app_url">https://github.com/sms_sender/</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_sender_settings">Sender-Settings</string>
+    <string name="main_edit_sender">Sender</string>
+    <string name="main_edit_recipient">Recipient</string>
+    <string name="main_button_browse">Browse</string>
+    <string name="main_button_send">Send</string>
+    <string name="main_edit_message">Enter Message here</string>
+    <string name="main_choose_phone">Choose Number</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_sender_settings">Sender-Settings</string>
+    <string name="action_about">About</string>
+    <string name="action_send">Send</string>
+
+    <string name="no_network">No Network</string>
+    <string name="network_error">Network error</string>
+    <string name="dialog_about_version">Version: %1$s</string>
+    <string name="dialog_about_author">Author: %1$s</string>
+    <string name="dialog_about_url">Url: %1$s</string>
+    <string name="dialog_about_title">About %1$s:</string>
+    <string name="dialog_about_copyright">Copyright &#169; 2013</string>
+    <string name="dialog_about_licence">Licenced under GPLv3:\n
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.\n\n
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.\n\n
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses/.
+    </string>
+
+    <string name="button_ok">OK</string>
+
+    <string name="service_code_no_valid_recipient">No valid recipient.</string>
+    <string name="service_code_no_valid_sender">No valid sender.</string>
+    <string name="service_code_no_valid_text">No valid text.</string>
+    <string name="service_code_no_valid_messagetype">No valid messagetype.</string>
+    <string name="service_code_no_valid_route">No valid route.</string>
+    <string name="service_code_identification_failed">Identification failed.</string>
+    <string name="service_code_no_credit">No credit.</string>
+    <string name="service_code_receiver_network_not_reachable">Reciever Network not reachable</string>
+    <string name="service_code_feature_not_available">Feature not available</string>
+    <string name="service_code_message_could_not_be_delivered">Message could not be delivered</string>
+    <string name="service_code_message_sent">Message sent</string>
+    <string name="service_code_unknown">Answer unknown</string>
+    <string name="service_code_invalid">Answer invalid</string>
+
+    <string name="pref_debug">Debug</string>
+    <string name="pref_debug_summ">Debug-Mode for the Sender.</string>
+
+    <string name="pref_sms_key">SMS-Key</string>
+    <string name="pref_sms_key_summ">Auth-Key for www.smstrade.de.</string>
+
+    <string name="pref_sender">Sender</string>
+    <string name="pref_sender_default">SmsTrade</string>
+</resources>
+

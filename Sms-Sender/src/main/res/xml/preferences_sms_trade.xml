@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="pref_sms_trade_debug"
+        android:title="@string/pref_debug"
+        android:summary="@string/pref_debug_summ"
+        android:defaultValue="false" />
+
+    <EditTextPreference
+        android:key="pref_sms_trade_sms_key"
+        android:title="@string/pref_sms_key"
+        android:summary="@string/pref_sms_key_summ"
+        android:defaultValue="" />
+</PreferenceScreen>

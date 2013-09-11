@@ -1,0 +1,12 @@
+<resources>
+    <string-array
+        name="pref_sender_values">
+        <item
+            >SmsTrade</item>
+    </string-array>
+    <string-array
+        name="pref_sender_entries">
+        <item
+            >www.smstrade.de</item>
+    </string-array>
+</resources>
