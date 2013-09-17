@@ -3,6 +3,7 @@ package net.wuehrer.sms_sender;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.View;
@@ -99,35 +100,9 @@ public class MainActivity extends Activity implements ListDialog.ListDialogListe
     }
 
     private void showSenderSettings() {
-        Class<?> pluginSettings = getSenderSettingsClass();
+        Class<?> pluginSettings = SenderHandler.getSenderSettingsClass(this);
         Intent intent = new Intent(this, pluginSettings);
         startActivity(intent);
-    }
-
-    //@TODO: this is not so good, because here we use the same things, as in getSenderClass
-    //  so maybe there is a better way to do this.
-    private Class<?> getSenderSettingsClass() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String sender = sharedPref.getString(KEY_PREF_SENDER, getString(R.string.pref_sender_default));
-        Log.d(DEBUG_TAG,sender);
-        if(sender.equals("SmsTrade")) {
-            return SmsTrade.SettingsActivity.class;
-        } else {
-            return null;
-        }
-    }
-
-    private SenderPlugin getSenderClass() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String sender = sharedPref.getString(KEY_PREF_SENDER, getString(R.string.pref_sender_default));
-        Log.d(DEBUG_TAG,sender);
-        if(sender.equals("SmsTrade")) {
-            return new SmsTrade(editMessage.getText().toString(),
-                editRecipient.getText().toString(),editSender.getText().toString(),
-                this);
-        } else {
-            return null;
-        }
     }
 
     public void selectSender(View view) {
@@ -144,8 +119,9 @@ public class MainActivity extends Activity implements ListDialog.ListDialogListe
 
     /** Called when the user clicks the Send button */
     public void sendMessage() {
-        SenderPlugin plugin = getSenderClass();
-        plugin.sendMessage();
+        SenderPlugin plugin = SenderHandler.getSenderInstance(this);
+        plugin.sendMessage(editMessage.getText().toString(),
+                editRecipient.getText().toString(), editSender.getText().toString());
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -238,4 +214,5 @@ public class MainActivity extends Activity implements ListDialog.ListDialogListe
         Log.d(DEBUG_TAG, "Selected " + selection);
         setPhoneNumber(selection, requestCode);
     }
+
 }

@@ -59,24 +59,18 @@ public class SmsTrade implements SenderPlugin{
         }
     }
 
-    private String message;
-    private String recipient;
-    private String sender;
     private Boolean debug;
     private String smsKey;
     private Activity callingActivity;
 
-    public SmsTrade(String message, String recipient, String sender, Activity callingActivity) {
-        this.message = message;
-        this.recipient = recipient;
-        this.sender = sender;
+    public SmsTrade(Activity callingActivity) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(callingActivity);
         this.debug = sharedPref.getBoolean(KEY_PREF_DEBUG, false);
         this.smsKey = sharedPref.getString(KEY_PREF_SMS_KEY, null);
         this.callingActivity = callingActivity;
     }
 
-    private String genUrl() {
+    private String genUrl(String message, String sender, String recipient) {
         HashMap<String,String> params = new HashMap<String,String>();
         if(smsKey != null) {
             params.put("key", smsKey);
@@ -104,8 +98,8 @@ public class SmsTrade implements SenderPlugin{
         return url;
     }
 
-    public void sendMessage() {
-        String url = genUrl();
+    public void sendMessage(String message, String sender, String recipient) {
+        String url = genUrl(message, sender, recipient);
 
         ConnectivityManager connMgr = (ConnectivityManager)
                 callingActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
