@@ -3,7 +3,7 @@
 
     <string name="app_name">SMS-Sender</string>
     <string name="app_author">Martin Wührer</string>
-    <string name="app_url">https://github.com/sms_sender/</string>
+    <string name="app_url">https://github.com/mwuehrer/sms_sender/</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_sender_settings">Sender-Settings</string>
     <string name="main_edit_sender">Sender</string>
